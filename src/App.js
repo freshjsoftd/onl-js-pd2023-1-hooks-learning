@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css'
+import TypeProps from './components/TypeProps';
 
 // let rCount = 1;
 
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     rCount.current++;
-    console.log(fieldRef.current.value);
+    // console.log(fieldRef.current.value);
   })
 
   useEffect(() => {
@@ -33,6 +34,12 @@ function App() {
           value={test}
           />
       <button onFocus={handlerFocus}>Focus</button>
+      <TypeProps 
+        count={rCount.current}
+        func={() => console.log('functionProp')}
+        // string={'It is string'}
+        bool={true}
+      />
     </div>
   )
 }
