@@ -1,46 +1,18 @@
-import React, {useCallback, useState } from 'react';
+import React from 'react';
 import './App.css';
-import CallbackItems from './components/CallbackItems';
-import TypeProps from './components/TypeProps';
+import Alert from './components/alert/Alert';
+import AlertProvider from './components/alert/AlertContext';
+import Main from './components/Main';
 
 function App() {
 
-  const [colored, setColored] = useState(false);
-	const [count, setCount] = useState(5);
-  
-	const styles = {
-		color: colored ? 'red' : 'green',
-	}
-
-  const createItems = useCallback(() => {
-    return new Array(count).fill('').map((el, index) => `Element #${index + 1}`)
-  }, [count]) 
-  // // Non memoized function
-  // const createItems = () => {
-  //   return new Array(count).fill('').map((el, index) => `Element #${index + 1}`)
-  // }
-	
-
 	return (
-		<>
-			<div className='app'>
-				<h1 style={styles}>Compute property: {count}</h1>
-				<button onClick={() => setCount((prev) => prev + 1)}>
-					Plus
-				</button>
-				<button
-					onClick={() => setColored((prev) => !prev)}>
-					Change Color
-				</button>
-				<TypeProps
-					count={2}
-					func={() => console.log('functionProp')}
-					// string={'It is string'}
-					bool={true}
-				/>
-        <CallbackItems getItems={createItems}/>
+		<AlertProvider value={alert}>
+			<div className='container pt-3'>
+				<Alert />
+				<Main toggle={() => {}}/>
 			</div>
-		</>
+		</AlertProvider>
 	);
 }
 
