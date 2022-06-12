@@ -18,7 +18,7 @@ function TypeProps({func, count, string, bool}) {
       style={styles}
       onClick={log}
       >
-      TypeProps
+      {string} TypeProps
       </div>
   )
 }
