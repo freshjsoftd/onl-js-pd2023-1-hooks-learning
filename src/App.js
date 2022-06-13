@@ -7,10 +7,10 @@ import Main from './components/Main';
 function App() {
 
 	return (
-		<AlertProvider value={alert}>
+		<AlertProvider>
 			<div className='container pt-3'>
 				<Alert />
-				<Main toggle={() => {}}/>
+				<Main/>
 			</div>
 		</AlertProvider>
 	);

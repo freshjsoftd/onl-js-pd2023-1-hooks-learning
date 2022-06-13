@@ -8,7 +8,7 @@ function Alert() {
     return null;
   }
   return (
-    <div className="alert alert-danger" onClick={toggle}>It is very important mesage</div>
+    <div className="alert alert-danger" onClick={toggle}>Attention alert</div>
   )
 }
 
